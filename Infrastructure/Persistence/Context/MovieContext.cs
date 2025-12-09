@@ -12,7 +12,7 @@ public class MovieContext : DbContext
 {
     protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=ELIF\\SQLEXPRESS; initial Catalog=ApiMovieDb; integrated Security= true;");    
+        optionsBuilder.UseSqlServer("Server=ELIF\\SQLEXPRESS; initial Catalog=ApiMovieDb; integrated Security= true; TrustServerCertificate=true");    
     }
 
     public DbSet<Cast> Casts { get; set; }
