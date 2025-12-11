@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieApi.Application.Features.Commands.CategoryCommands;
+namespace MovieApi.Application.Features.Queries.MovieQueries;
 
-public class DeleteCategoryCommand
+public class GetMovieByIdQuery
 {
     public int Id { get; set; }
 }

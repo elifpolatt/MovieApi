@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirements", "Requirement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Domain", "Core\Domain\MovieApi.Domain.csproj", "{191B80F9-96EA-4FE1-9AF0-0ECA1FF8303D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Infrastructure\Persistence\Persistence.csproj", "{C90F982E-F728-4387-945B-BD60B431B1E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Persistence", "Infrastructure\Persistence\MovieApi.Persistence.csproj", "{C90F982E-F728-4387-945B-BD60B431B1E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{27620C2B-C50F-4FC6-81C5-5832227119F6}"
 EndProject

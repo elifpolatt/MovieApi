@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Features\Handlers\CategoryHandlers\" />
+    <Folder Include="Features\Handlers\MovieHandlers\" />
   </ItemGroup>
 
 </Project>
