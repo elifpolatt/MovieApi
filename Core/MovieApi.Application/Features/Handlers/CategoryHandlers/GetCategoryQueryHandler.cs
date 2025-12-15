@@ -13,7 +13,7 @@ public class GetCategoryQueryHandler
         _context = context;
     }
 
-    public async Task<List<GetCategoryByIdQueryResult>> Handle()
+    public async Task<List<GetCategoryQueryResult>> Handle()
     {
         var categories = await _context.Categories.ToListAsync();
 

@@ -18,7 +18,7 @@ public class CreateMovieCommandHandler
         _context = context;
     }
 
-    public async void Handle(CreateMovieCommand command)
+    public async Task Handle(CreateMovieCommand command)
     {
         _context.Movies.Add(new Movie
         {
@@ -34,5 +34,4 @@ public class CreateMovieCommandHandler
 
         await _context.SaveChangesAsync();
     }
-    
 }

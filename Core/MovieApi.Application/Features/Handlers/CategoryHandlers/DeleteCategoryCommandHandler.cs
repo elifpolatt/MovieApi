@@ -17,7 +17,7 @@ public class DeleteCategoryCommandHandler
         _context = context;
     }
 
-    public async void Handle(DeleteCategoryCommand command)
+    public async Task Handle(DeleteCategoryCommand command)
     {
         var categories = await _context.Categories.FindAsync(command.Id);
 

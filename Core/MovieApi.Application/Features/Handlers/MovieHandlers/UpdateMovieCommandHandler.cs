@@ -17,17 +17,20 @@ public class UpdateMovieCommandHandler
         _context = context;
     }
 
-    public async void Handle(UpdateMovieCommand command)
+    public async Task Handle(UpdateMovieCommand command)
     {
         var movies = await _context.Movies.FindAsync(command.Id);
-        movies.CoverImageUrl = command.CoverImageUrl;
-        movies.CreatedYear = command.CreatedYear;
-        movies.Description = command.Description;
-        movies.Duration = command.Duration;
-        movies.Rating = command.Rating;
-        movies.ReleaseDate = command.ReleaseDate;
-        movies.Status = command.Status;
-        movies.Title = command.Title;
+        if (movies != null)
+        {
+            movies.CoverImageUrl = command.CoverImageUrl;
+            movies.CreatedYear = command.CreatedYear;
+            movies.Description = command.Description;
+            movies.Duration = command.Duration;
+            movies.Rating = command.Rating;
+            movies.ReleaseDate = command.ReleaseDate;
+            movies.Status = command.Status;
+            movies.Title = command.Title;
+        }
 
         await _context.SaveChangesAsync();
     }

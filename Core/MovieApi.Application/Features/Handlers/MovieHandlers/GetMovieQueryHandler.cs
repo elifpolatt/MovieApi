@@ -14,9 +14,10 @@ public class GetMovieQueryHandler
         _context = context;
     }
 
-    public async Task<List<GetCategoryQueryResult>> Handle()
+    public async Task<List<GetMovieQueryResult>> Handle()
     {
         var movies = await _context.Movies.ToListAsync();
+
         return movies.Select(x => new GetMovieQueryResult
         {
             Id = x.Id,
