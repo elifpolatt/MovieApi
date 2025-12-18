@@ -54,8 +54,8 @@ namespace WebApi.Controllers
             return Ok();
         }
 
-        [HttpGet("GetCategory")]
-        public async Task<IActionResult> GetCategory(int id)
+        [HttpGet("id")]
+        public async Task<IActionResult> GetCategoryById(int id)
         {
             var value = await _getCategoryByIdQueryHandler.Handle(new GetCategoryByIdQuery(id));
             return Ok(value);

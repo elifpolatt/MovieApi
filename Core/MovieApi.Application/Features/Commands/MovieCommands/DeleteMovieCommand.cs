@@ -8,5 +8,10 @@ namespace MovieApi.Application.Features.Commands.MovieCommands;
 
 public class DeleteMovieCommand
 {
+    public DeleteMovieCommand(int id)
+    {
+        Id = id;
+    }
+
     public int Id { get; set; }
 }
