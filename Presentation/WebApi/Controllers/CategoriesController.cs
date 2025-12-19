@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieApi.Application.Features.Commands.CategoryCommands;
-using MovieApi.Application.Features.Handlers.CategoryHandlers;
+using MovieApi.Application.Features.CQRSDesignPattern.Commands.CategoryCommands;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.Queries.CategoryQueries;
 
 namespace WebApi.Controllers

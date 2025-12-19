@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Models;
-using MovieApi.Application.Features.Handlers.CategoryHandlers;
-using MovieApi.Application.Features.Handlers.MovieHandlers;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
+using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
 using Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
