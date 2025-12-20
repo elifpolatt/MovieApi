@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MovieApi.Application.Features.MediatorDesignPattern.Queries.CastQueries;
 using MovieApi.Application.Features.MediatorDesignPattern.Results.CastResults;
 using Persistence.Context;
 
 namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.CastHandlers;
 
-public class GetCastByIdQueryHandler : IRequestHandler<GetCastByIdQuery, GetCastByIdResult>
+public class GetCastByIdQueryHandler : IRequestHandler<GetCastByIdQuery, GetCastByIdQueryResult>
 {
     private readonly MovieContext _context;
-    public async Task<GetCastByIdResult> Handle(GetCastByIdQuery request, CancellationToken cancellationToken)
+    public async Task<GetCastByIdQueryResult> Handle(GetCastByIdQuery request, CancellationToken cancellationToken)
     {
-        var values = await _context.Casts.FindAsync(request.Id);
+        var values = await _context.Casts.FindAsync(request.Id, cancellationToken);
 
-        return new GetCastByIdResult
+        return new GetCastByIdQueryResult
         {
             Id = values.Id,
             Title = values.Title,

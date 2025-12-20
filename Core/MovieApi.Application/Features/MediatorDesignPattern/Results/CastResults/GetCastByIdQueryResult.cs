@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieApi.Application.Features.MediatorDesignPattern.Results.CastResults;
 
-public class GetCastByIdResult
+public class GetCastByIdQueryResult
 {
     public int Id { get; set; }
 

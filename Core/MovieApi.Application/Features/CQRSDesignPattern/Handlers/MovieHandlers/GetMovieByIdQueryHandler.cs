@@ -17,11 +17,11 @@ public class GetMovieByIdQueryHandler
         _context = context;
     }
 
-    public async Task<GetMovieByIdResult> Handle(GetMovieByIdQuery query)
+    public async Task<GetMovieByIdQueryResult> Handle(GetMovieByIdQuery query)
     {
         var movies = await _context.Movies.FindAsync(query.Id);
 
-        return new GetMovieByIdResult
+        return new GetMovieByIdQueryResult
         {
             CoverImageUrl = movies.CoverImageUrl,
             CreatedYear = movies.CreatedYear,
