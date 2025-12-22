@@ -1,7 +1,10 @@
 using Microsoft.OpenApi.Models;
+using MovieApi.Application;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using MovieApi.Application.Features.MediatorDesignPattern.Handlers.TagHandlers;
 using Persistence.Context;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +21,13 @@ builder.Services.AddScoped<GetMovieByIdQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<DeleteMovieCommandHandler>();
+
+
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(
+        typeof(ApplicationAssemblyReference).Assembly
+    ));
+//tüm mdiatr handler’larýný otomatik olarak bulur ve DI container’a ekler.
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

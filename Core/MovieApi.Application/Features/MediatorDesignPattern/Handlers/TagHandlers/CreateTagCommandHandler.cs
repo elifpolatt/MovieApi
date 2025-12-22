@@ -5,7 +5,7 @@ using Persistence.Context;
 
 namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.TagHandlers;
 
-public class CreateTagCommandHandler : IRequest<CreateTagCommand>
+public class CreateTagCommandHandler : IRequestHandler<CreateTagCommand>
 {
     private readonly MovieContext _context;
 
@@ -16,7 +16,7 @@ public class CreateTagCommandHandler : IRequest<CreateTagCommand>
 
     public async Task Handle(CreateTagCommand request, CancellationToken cancellationToken)
     {
-        _context.Tags.Add(new Tag
+        await _context.Tags.AddAsync(new Tag
         {
             Title = request.Title
         });

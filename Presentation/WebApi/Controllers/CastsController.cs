@@ -18,37 +18,37 @@ public class CastsController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult CastList()
+    public async Task<IActionResult> CastList()
     {
-        var value = _mediator.Send(new GetCastQuery());
+        var value = await _mediator.Send(new GetCastQuery());
         return Ok(value);
     }
 
     [HttpPost]
-    public IActionResult CreateCast(CreateCastCommand command)
+    public async Task<IActionResult> CreateCast(CreateCastCommand command)
     {
-        _mediator.Send(command);
+        await _mediator.Send(command);
         return Ok();
     }
 
     [HttpDelete]
-    public IActionResult DeleteCast(int id)
+    public async Task<IActionResult> DeleteCast(int id)
     {
-        _mediator.Send(new DeleteCastCommand(id));
+        await _mediator.Send(new DeleteCastCommand(id));
         return Ok();
     }
 
     [HttpPut]
-    public IActionResult UpdateCast(UpdateCastCommand command)
+    public async Task<IActionResult> UpdateCast(UpdateCastCommand command)
     {
-        _mediator.Send(command);
+        await _mediator.Send(command);
         return Ok();
     }
 
     [HttpGet("id")]
-    public IActionResult GetCast(int id)
+    public async Task<IActionResult> GetCast(int id)
     {
-        var value = _mediator.Send(new GetCastByIdQuery(id));
+        var value = await _mediator.Send(new GetCastByIdQuery(id));
         return Ok(value);
     }
 }
